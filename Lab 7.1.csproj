@@ -1,13 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+using System;
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Lab_7</RootNamespace>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="D:\Обучение\BIM - проектирование ИТМО\Lab 7\Program.cs" Link="Program.cs" />
-  </ItemGroup>
-
-</Project>
+namespace Lab_7._1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Два треугольника заданы длинами своих сторон. Определить, площадь какого из них больше
+            //(создать метод для вычисления  площади треугольника по длинам его сторон).
+            //Для решения задачи можно использовать формулу Герона S = Math.Sqrt(p * (p - a) * (p - b) * (p - c)),
+            //где x, y, z – стороны треугольника, p – полупериметр.
+            int a1 = 8; int b1 = 4; int c1 = 6;
+            int a2 = 5; int b2 = 9; int c2 = 12;
+            Console.WriteLine("Площадь первого треугольника S1: = {0:f2}\nПлощадь первого треугольника S2: = {1:f2}", Geron(a1, b1, c1), Geron(a2, b2, c2));
+            Console.Read();
+        }
+        static double Geron(int a, int b, int c)
+        {
+            double p = (a + b + c) / 2;
+            double S = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            return S;
+        } 
+    }
+}
